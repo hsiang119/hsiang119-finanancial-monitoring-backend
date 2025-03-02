@@ -31,8 +31,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
 
-      - name: Install dependencies
-        run: go mod download
+      - name: Go mod tidy
+        run: go mod tidy
 
       - name: Run Lint
         uses: golangci/golangci-lint-action@v6
