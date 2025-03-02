@@ -10,7 +10,7 @@ GOLINT := golangci-lint
 MIGRATION_DIR := migrations
 
 # 預設目標
-all: deps lint test build
+all: deps lint test
 
 # 下載依賴
 deps:
