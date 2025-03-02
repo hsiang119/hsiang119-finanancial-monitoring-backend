@@ -1,4 +1,4 @@
-.PHONY: all build run test clean docker docker-compose docker-clean lint migrate migrate-up migrate-down deps
+.PHONY: all build run test fmt clean docker docker-compose docker-clean lint migrate migrate-up migrate-down deps
 
 # 變數定義
 APP_NAME := financial-monitoring-backend
@@ -31,6 +31,11 @@ run:
 test:
 	@echo "運行測試..."
 	$(GOTEST) -v ./...
+
+# 格式化代碼
+fmt:
+	@echo "格式化 Go 代碼..."
+	$(GO) fmt ./...
 
 # 測試覆蓋率
 test-cover:
@@ -90,6 +95,7 @@ help:
 	@echo "  make run           - 運行應用程式"
 	@echo "  make test          - 執行測試"
 	@echo "  make test-cover    - 測試覆蓋率報告"
+	@echo "  make fmt           - 格式化 Go 代碼"
 	@echo "  make lint          - 執行代碼靜態分析"
 	@echo "  make clean         - 清理生成文件"
 	@echo "  make docker        - 建置 Docker 映像"
