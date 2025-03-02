@@ -37,7 +37,8 @@ jobs:
       - name: Run Lint
         uses: golangci/golangci-lint-action@v6
         with:
-          version: v1.58
+          version: v1.64
+          verify: false
 
   test:
     runs-on: ubuntu-latest
